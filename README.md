@@ -29,7 +29,7 @@ Follow these instructions to set up the project locally.
 1. **Clone the Repository:**
 
    ```
-   git clone https://github.com/amalSheikhdaher/Book_CRUD_API.git
+   git clone https://github.com/amalSheikhdaher/Book-CRUD-API.git
    cd book-crud-api
    ```
 
