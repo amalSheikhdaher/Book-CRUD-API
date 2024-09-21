@@ -1,0 +1,485 @@
+{
+	"info": {
+		"_postman_id": "8363226e-800e-4130-91ce-15cb4207d51b",
+		"name": "Book CRUD API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "34376611"
+	},
+	"item": [
+		{
+			"name": "Show All Book",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:8000/api/books"
+			},
+			"response": [
+				{
+					"name": "Show All Book",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "http://127.0.0.1:8000/api/books"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 20 Sep 2024 17:30:15 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"title\": \"LARAVEL: THE AMAZING QUIZ BOOK\",\n            \"author\": \"NARAYAN CHANGDER\",\n            \"published_at\": \"2024-05-16T00:00:00.000000Z\",\n            \"is_active\": 1\n        },\n        {\n            \"id\": 2,\n            \"title\": \"LARAVEL: THE AMAZING BOOK\",\n            \"author\": \"NARAYAN CHANGDER\",\n            \"published_at\": \"2024-05-16T00:00:00.000000Z\",\n            \"is_active\": 1\n        }\n    ],\n    \"message\": \"Book Store Successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add New Book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "LARAVEL: THE AMAZING QUIZ BOOK",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "NARAYAN CHANGDER",
+							"type": "text"
+						},
+						{
+							"key": "published_at",
+							"value": "2024-5-16",
+							"type": "text"
+						},
+						{
+							"key": "is_active",
+							"value": "false",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api/books"
+			},
+			"response": [
+				{
+					"name": "Add New Book without entering the is_active value",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "LARAVEL: THE AMAZING QUIZ BOOK",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "NARAYAN CHANGDER",
+									"type": "text"
+								},
+								{
+									"key": "published_at",
+									"value": "2024-5-16",
+									"type": "text"
+								},
+								{
+									"key": "is_active",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/books"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 20 Sep 2024 17:22:05 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"LARAVEL: THE AMAZING QUIZ BOOK\",\n        \"author\": \"NARAYAN CHANGDER\",\n        \"published_at\": \"2024-05-16T00:00:00.000000Z\",\n        \"is_active\": true\n    },\n    \"message\": \"Book Store Successfully\"\n}"
+				},
+				{
+					"name": "Add New Book with entering the is_active value",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "LARAVEL: THE AMAZING QUIZ BOOK",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "NARAYAN CHANGDER",
+									"type": "text"
+								},
+								{
+									"key": "published_at",
+									"value": "2024-5-16",
+									"type": "text"
+								},
+								{
+									"key": "is_active",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/books"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 20 Sep 2024 17:23:42 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"title\": \"LARAVEL: THE AMAZING QUIZ BOOK\",\n        \"author\": \"NARAYAN CHANGDER\",\n        \"published_at\": \"2024-05-16T00:00:00.000000Z\",\n        \"is_active\": false\n    },\n    \"message\": \"Book Store Successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Edit Book Data",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "LARAVEL: THE AMAZING BOOK",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "NARAYAN CHANGDER",
+							"type": "text"
+						},
+						{
+							"key": "published_at",
+							"value": "2024-5-16",
+							"type": "text"
+						},
+						{
+							"key": "is_active",
+							"value": "true",
+							"type": "text"
+						}
+					]
+				},
+				"url": "http://127.0.0.1:8000/api/books/2"
+			},
+			"response": [
+				{
+					"name": "Edit Book Data",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "LARAVEL: THE AMAZING BOOK",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "NARAYAN CHANGDER",
+									"type": "text"
+								},
+								{
+									"key": "published_at",
+									"value": "2024-5-16",
+									"type": "text"
+								},
+								{
+									"key": "is_active",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/books/2"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 20 Sep 2024 17:29:42 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"title\": \"LARAVEL: THE AMAZING BOOK\",\n        \"author\": \"NARAYAN CHANGDER\",\n        \"published_at\": \"2024-05-16T00:00:00.000000Z\",\n        \"is_active\": true\n    },\n    \"message\": \"Book Update Successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Book",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "http://127.0.0.1:8000/api/books/2"
+			},
+			"response": [
+				{
+					"name": "Delete Book",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "http://127.0.0.1:8000/api/books/2"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.2"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 20 Sep 2024 17:31:30 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": true,\n    \"message\": \"Book Delete Successfully\"\n}"
+				}
+			]
+		}
+	]
+}
