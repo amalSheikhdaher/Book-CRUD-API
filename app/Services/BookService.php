@@ -11,8 +11,9 @@ class BookService
     /**
      * Store a newly created book in the database.
      * 
-     * @param \App\Http\Requests\StoreBookRequest $request The validated request containing book data.
-     * @return \App\Models\Book
+     * @param object $data The validated request object containing the book data (e.g., title, author, etc.).
+     * @return \App\Models\Book The created Book instance.
+     * @throws \Exception If the creation of the book fails, an exception is thrown.
      */
     public function store($data): Book
     {
@@ -33,8 +34,9 @@ class BookService
      * Update an existing book in the database.
      * 
      * @param \App\Models\Book $book The book instance to be updated.
-     * @param \App\Http\Requests\UpdateBookRequest $request The validated request containing updated book data.
-     * @return \App\Models\Book
+     * @param array $data The array containing updated book data.
+     * @return \App\Models\Book The updated Book instance.
+     * @throws \Exception If the update operation fails, an exception is thrown.
      */
     public function update(Book $book, $data): Book
     {
@@ -54,9 +56,10 @@ class BookService
 
     /**
      * Delete a book from the database.
-     * 
+     *
      * @param \App\Models\Book $book The book instance to be deleted.
-     * @return \App\Models\Book
+     * @return void
+     * @throws \Exception If the deletion operation fails, an exception is thrown.
      */
     public function delete(Book $book): void
     {
