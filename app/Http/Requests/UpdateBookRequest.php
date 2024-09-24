@@ -54,9 +54,9 @@ class UpdateBookRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title'        => 'sometimes|required|max:255',
-            'author'       => 'sometimes|required|max:255',
-            'published_at' => 'sometimes|required|date_format:Y-m-d',
+            'title'        => 'sometimes|string|max:255',
+            'author'       => 'sometimes|string|max:255',
+            'published_at' => 'sometimes|date_format:Y-m-d',
             'is_active'    => 'sometimes|boolean'
         ];
     }
