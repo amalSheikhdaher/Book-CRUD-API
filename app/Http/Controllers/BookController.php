@@ -67,9 +67,8 @@ class BookController extends Controller
      */
     public function show(Book $book): JsonResponse
     {
-        $data = new BookResource($book);
         return $this->responseApi(
-            new BookResource($data),
+            new BookResource($book),
             'Single Book data Show',
             200
         );
